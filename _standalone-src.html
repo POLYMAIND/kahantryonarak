@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#f4f1ea">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f4f1ea"/>
+    <g fill="none" stroke="#1a1a1a" stroke-width="26">
+      <circle cx="450" cy="400" r="150"/>
+      <circle cx="790" cy="400" r="150"/>
+      <path d="M600 385h40"/>
+      <path d="M300 355l-60-40M940 355l60-40"/>
+    </g>
+    <rect x="360" y="620" width="480" height="34" fill="#c8322d"/>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-dd5e22e9-8aeb-4ac5-b52b-eeb5d3a00394/styles.css" />
+<script src="_ds/modernist-dd5e22e9-8aeb-4ac5-b52b-eeb5d3a00394/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  a { color: var(--color-accent-700); text-decoration: none; border-bottom: 1px solid var(--color-accent-700); }
+  a:hover { color: var(--color-accent-600); border-bottom-color: var(--color-accent-600); }
+  sup { font-size: 9px; font-weight: 600; color: var(--color-accent-700); padding-left: 2px; vertical-align: super; }
+  input[type="range"] { accent-color: var(--color-accent); }
+</style>
+</helmet>
+<div style="min-height: 100vh; padding: var(--space-8) var(--space-8) 96px; display: flex; flex-direction: column; align-items: center; gap: var(--space-8)">
+
+  <header style="width: 100%; max-width: 1280px; display: flex; flex-direction: column; gap: var(--space-4)">
+    <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); font-weight: 600">Modell-összehasonlítás / Model comparison — 2026</div>
+    <h1 style="font-size: 60px; line-height: 1.02; letter-spacing: -0.03em; margin: 0; max-width: 22ch; text-transform: uppercase">Szemüveg-ráhelyezés hat képmodellen</h1>
+    <p style="margin: 0; max-width: 64ch; font-size: 17px; line-height: 1.55; text-wrap: pretty">Egy kimeneti kép, két bemeneti kép: ugyanaz a portré és ugyanaz a keret minden futásnál. Az árak egy try-on képre vetített becslések, a sebesség reális, mért tartomány.</p>
+  </header>
+
+  <hr class="hr" style="width: 100%; max-width: 1280px; margin: 0" />
+
+  <section style="width: 100%; max-width: 1280px; display: flex; flex-direction: column; gap: var(--space-4)">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4)">
+      <h2 style="font-size: 22px; margin: 0; text-transform: uppercase; letter-spacing: -0.01em">Bemenet — minden modellnél ugyanaz <span style="font-weight: 400; opacity: .5">/ Shared input</span></h2>
+      <span style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55">2 kép / 2 images</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); max-width: 760px">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-2)">
+        <div style="background: var(--color-surface); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; overflow: hidden">
+          <img src="uploads/szemben_A-Z_CHIC_5409B.webp" alt="Szemüvegkeret" style="width: 100%; height: 100%; object-fit: contain; display: block" />
+        </div>
+        <figcaption style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55">Termékkép / product — A-Z CHIC 5409B</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-2)">
+        <div style="background: var(--color-surface); aspect-ratio: 4/3; overflow: hidden">
+          <img src="uploads/preview/hf_20260729_120119_475db91e-32b5-4a1d-8d11-cb4b46f8f06d.jpg" alt="Portré" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; display: block" />
+        </div>
+        <figcaption style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55">Portré / subject</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <hr class="hr" style="width: 100%; max-width: 1280px; margin: 0" />
+
+  <section style="width: 100%; max-width: 1280px; display: flex; flex-direction: column; gap: var(--space-4)">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4)">
+      <h2 style="font-size: 22px; margin: 0; text-transform: uppercase; letter-spacing: -0.01em">Összehasonlítás <span style="font-weight: 400; opacity: .5">/ Side by side</span></h2>
+      <span style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55">6 modell / 6 models</span>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 15%">Modell<br /><span style="opacity: .6">Model</span></th>
+          <th style="width: 13%">Ár / kimeneti kép<br /><span style="opacity: .6">Price per output</span></th>
+          <th style="width: 12%">Extra input kép<br /><span style="opacity: .6">Extra input img</span></th>
+          <th style="width: 10%">1 try-on ≈<br /><span style="opacity: .6">Per try-on</span></th>
+          <th style="width: 13%">Sebesség<br /><span style="opacity: .6">Real-world speed</span></th>
+          <th>Erre a taskra<br /><span style="opacity: .6">Fit for this task</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight: 700">Seedream 5.0 Lite</td>
+          <td style="font-variant-numeric: tabular-nums">$0.035<sup>1</sup></td>
+          <td>benne / included</td>
+          <td style="font-variant-numeric: tabular-nums">~3,5¢</td>
+          <td>8–15 mp<sup>2</sup></td>
+          <td style="text-wrap: pretty">14 referenciakép, beépített reasoning<sup>1</sup> — a legkedvezőbb éles költség.</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 700">Nano Banana 2 Lite</td>
+          <td style="font-variant-numeric: tabular-nums">~$0.028–0.04</td>
+          <td>input tokenek</td>
+          <td style="font-variant-numeric: tabular-nums">~3–4,5¢</td>
+          <td>~4 mp, edit alatt 2 mp is<sup>3</sup></td>
+          <td style="text-wrap: pretty">A leggyorsabb, 14 referenciakép<sup>3</sup> — élesben a legjobb válaszidő.</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 700">Seedream 4.5</td>
+          <td style="font-variant-numeric: tabular-nums">$0.040<sup>4</sup></td>
+          <td>benne / included</td>
+          <td style="font-variant-numeric: tabular-nums">~4¢</td>
+          <td>17 mp<sup>4</sup> / 10–30 mp<sup>2</sup></td>
+          <td style="text-wrap: pretty">Az 5.0 Lite mindenben legyőzi, és még $0.005-tel kevesebb is<sup>2</sup> — kihagyható.</td>
+        </tr>
+        <tr style="background: var(--color-accent-100)">
+          <td style="font-weight: 700">
+            <span style="display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-start">
+              <span>Seedream 5.0 Pro</span>
+              <sc-if value="{{ highlightBest }}" hint-placeholder-val="{{ true }}"><span class="tag tag-accent" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600">Erre a legjobb / best fit</span></sc-if>
+            </span>
+          </td>
+          <td style="font-variant-numeric: tabular-nums">$0.045 (≤2,36 MP)<br /><span style="opacity: .65">$0.09 fölötte<sup>3</sup></span></td>
+          <td>első ingyen, utána $0.003<sup>3</sup></td>
+          <td style="font-variant-numeric: tabular-nums">~4,8¢ <span style="opacity: .65">(1.5K)</span><br />~9,3¢ <span style="opacity: .65">(2K)</span></td>
+          <td>~5–15 mp</td>
+          <td style="text-wrap: pretty">10 referenciakép, régió-alapú edit: címkét, színt, terméket cserél a frame érintése nélkül<sup>5</sup>.</td>
+        </tr>
+        <tr>
+          <td style="font-weight: 700">Nano Banana 2</td>
+          <td style="font-variant-numeric: tabular-nums">$0.045 (512px) – $0.151 (4K)<sup>6</sup><br /><span style="opacity: .65">1K ≈ $0.067</span></td>
+          <td>input tokenek</td>
+          <td style="font-variant-numeric: tabular-nums">~7¢ <span style="opacity: .65">(1K)</span><br />~15¢ <span style="opacity: .65">(4K)</span></td>
+          <td>~5–15 mp</td>
+          <td style="text-wrap: pretty; padding-top: var(--space-2); padding-bottom: var(--space-2)">
+            <span style="display: flex; flex-direction: column; gap: var(--space-2)">
+              <span>Batch API-val −50%<sup>6</sup> — jó all-rounder, drágább lane.</span>
+              <span style="display: flex; gap: var(--space-2); background: var(--color-surface); padding: var(--space-2) var(--space-3); font-size: 12.5px; line-height: 1.45; border-left: 2px solid var(--color-accent)">
+                <span>A batch API kötegelt, órás átfutású feldolgozás — try-onra, ahol a felhasználó a válaszra vár, nem jó. Csak aszinkron tömeges generálásra.</span>
+              </span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight: 700">GPT Image 2</td>
+          <td style="font-variant-numeric: tabular-nums">$0.21<br /><span style="opacity: .65">4K-n $0.40+<sup>7</sup></span></td>
+          <td>input tokenek</td>
+          <td style="font-variant-numeric: tabular-nums">~22¢+</td>
+          <td>30 mp – percek</td>
+          <td style="text-wrap: pretty">Maszk-alapú edit és beszélgetéses instrukciókövetés egy szubjektumon<sup>5</sup> — a legjobb prompt-követés, de 5× ár.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin: 0; font-size: 11px; letter-spacing: 0.04em; opacity: .55">mp = másodperc / seconds · ¢ = amerikai cent · az „1 try-on” a kimeneti kép és az extra input becsült összköltsége.</p>
+  </section>
+
+  <sc-if value="{{ showGallery }}" hint-placeholder-val="{{ true }}">
+  <hr class="hr" style="width: 100%; max-width: 1280px; margin: 0" />
+  <section style="width: 100%; max-width: 1280px; display: flex; flex-direction: column; gap: var(--space-4)">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4)">
+      <h2 style="font-size: 22px; margin: 0; text-transform: uppercase; letter-spacing: -0.01em">Kimenetek <span style="font-weight: 400; opacity: .5">/ Outputs</span></h2>
+      <span style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55">ugyanaz a prompt / same prompt</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6)">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-3)">
+        <div style="aspect-ratio: 3/4; background: var(--color-surface); overflow: hidden">
+          <img src="uploads/preview/sd5lite.jpg" alt="Seedream 5.0 Lite kimenet" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3)">
+          <span style="font-weight: 700; font-size: 15px">Seedream 5.0 Lite</span>
+          <span style="font-size: 11px; letter-spacing: 0.04em; opacity: .55">~3,5¢ · 8–15 mp</span>
+        </figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-3)">
+        <div style="aspect-ratio: 3/4; background: var(--color-surface); overflow: hidden">
+          <img src="uploads/preview/nb2lite.jpg" alt="Nano Banana 2 Lite kimenet" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3)">
+          <span style="font-weight: 700; font-size: 15px">Nano Banana 2 Lite</span>
+          <span style="font-size: 11px; letter-spacing: 0.04em; opacity: .55">~3–4,5¢ · ~4 mp</span>
+        </figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-3)">
+        <div style="aspect-ratio: 3/4; background: var(--color-surface); overflow: hidden">
+          <img src="uploads/preview/sd45.jpg" alt="Seedream 4.5 kimenet" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3)">
+          <span style="font-weight: 700; font-size: 15px">Seedream 4.5</span>
+          <span style="font-size: 11px; letter-spacing: 0.04em; opacity: .55">~4¢ · 17 mp</span>
+        </figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-3)">
+        <div style="aspect-ratio: 3/4; background: var(--color-surface); overflow: hidden; outline: 2px solid var(--color-accent)">
+          <img src="uploads/preview/sd5pro.jpg" alt="Seedream 5.0 Pro kimenet" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3)">
+          <span style="font-weight: 700; font-size: 15px">Seedream 5.0 Pro <sc-if value="{{ highlightBest }}" hint-placeholder-val="{{ true }}"><span style="font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700)">· best fit</span></sc-if></span>
+          <span style="font-size: 11px; letter-spacing: 0.04em; opacity: .55">~4,8¢ · ~5–15 mp</span>
+        </figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-3)">
+        <div style="aspect-ratio: 3/4; background: var(--color-surface); overflow: hidden">
+          <img src="uploads/preview/nb2.jpg" alt="Nano Banana 2 kimenet" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3)">
+          <span style="font-weight: 700; font-size: 15px">Nano Banana 2</span>
+          <span style="font-size: 11px; letter-spacing: 0.04em; opacity: .55">~7¢ · ~5–15 mp</span>
+        </figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: var(--space-3)">
+        <div style="aspect-ratio: 3/4; background: var(--color-surface); overflow: hidden">
+          <img src="uploads/preview/gpt2.jpg" alt="GPT Image 2 kimenet" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+        </div>
+        <figcaption style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3)">
+          <span style="font-weight: 700; font-size: 15px">GPT Image 2</span>
+          <span style="font-size: 11px; letter-spacing: 0.04em; opacity: .55">~22¢+ · 30 mp–perc</span>
+        </figcaption>
+      </figure>
+    </div>
+    <p style="margin: 0; font-size: 11px; letter-spacing: 0.04em; opacity: .55">A kimenetek szándékosan színesek: a keret színhűsége és fémfényének megőrzése az összehasonlítás tárgya.</p>
+  </section>
+  </sc-if>
+
+  <hr class="hr" style="width: 100%; max-width: 1280px; margin: 0" />
+
+  <section style="width: 100%; max-width: 1280px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6)">
+    <div class="card" style="gap: var(--space-3); padding: var(--space-6); border-left: 2px solid var(--color-accent)">
+      <div class="card-kicker">Javaslat / recommendation</div>
+      <p class="card-title" style="margin: 0; font-size: 22px; line-height: 1.25; text-wrap: pretty">Seedream 5.0 Pro a végleges try-on képekre — a régió-alapú edit a keretet érintetlenül hagyja.</p>
+      <p class="card-body" style="font-size: 14px; line-height: 1.55; opacity: .85; text-wrap: pretty">Napi 300 éles hívásnál ez ~$14,40 / nap (~$432 / hó) 1.5K-n. Ha ennél is lejjebb kell menni, Seedream 5.0 Lite ~$315 / hó — a 4.5 kihagyható, a GPT Image 2 pedig 4,5× ennyi.</p>
+    </div>
+    <div class="card" style="gap: var(--space-4); padding: var(--space-6)">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3)">
+        <div class="card-kicker">Éles költség / production cost</div>
+        <div style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600">300 hívás / nap</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr auto auto; gap: var(--space-2) var(--space-6); font-size: 13.5px; font-variant-numeric: tabular-nums; align-items: baseline">
+        <span style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55">Modell</span>
+        <span style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55; text-align: right">/ nap</span>
+        <span style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55; text-align: right">/ hó (30 nap)</span>
+
+        <span>Seedream 5.0 Lite</span><span style="text-align: right">$10,50</span><span style="text-align: right">~$315</span>
+        <span>Nano Banana 2 Lite</span><span style="text-align: right">$8,40–13,50</span><span style="text-align: right">~$250–405</span>
+        <span>Seedream 4.5</span><span style="text-align: right">$12,00</span><span style="text-align: right">~$360</span>
+        <span style="font-weight: 700; color: var(--color-accent-700)">Seedream 5.0 Pro <span style="font-weight: 400; opacity: .7">(1.5K)</span></span><span style="text-align: right; font-weight: 700; color: var(--color-accent-700)">$14,40</span><span style="text-align: right; font-weight: 700; color: var(--color-accent-700)">~$432</span>
+        <span style="opacity: .75">Seedream 5.0 Pro (2K)</span><span style="text-align: right; opacity: .75">$27,90</span><span style="text-align: right; opacity: .75">~$837</span>
+        <span>Nano Banana 2 <span style="opacity: .7">(1K)</span></span><span style="text-align: right">$21,00</span><span style="text-align: right">~$630</span>
+        <span>GPT Image 2</span><span style="text-align: right">$66,00</span><span style="text-align: right">~$1 980</span>
+      </div>
+      <p style="margin: 0; font-size: 11px; letter-spacing: 0.04em; opacity: .55">Csak éles, valós idejű hívások — nincs draft-kör, és batch kedvezmény sem számolható.</p>
+    </div>
+  </section>
+
+  <sc-if value="{{ showSources }}" hint-placeholder-val="{{ true }}">
+  <hr class="hr" style="width: 100%; max-width: 1280px; margin: 0" />
+  <section style="width: 100%; max-width: 1280px; display: flex; flex-direction: column; gap: var(--space-3)">
+    <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); font-weight: 600">Források / sources</div>
+    <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2) var(--space-6); font-size: 12.5px; opacity: .75">
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">1</span> Kie</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">2</span> laozhang</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">3</span> Atlas Cloud</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">4</span> Useful AI</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">5</span> Gptproto</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">6</span> AI Free API</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">7</span> Pixmind</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">8</span> Fittingbox</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">9</span> Guideflow</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">10</span> Genlook</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">11</span> Shopify App Store</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">12</span> 3D AI Studio</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">13</span> Lorphic</li>
+      <li style="display: flex; gap: var(--space-2)"><span style="color: var(--color-accent-700); font-weight: 700">14</span> Meshy AI</li>
+    </ol>
+  </section>
+  </sc-if>
+
+  <hr class="hr" style="width: 100%; max-width: 1280px; margin: 0" />
+
+  <section style="width: 100%; max-width: 1280px; display: flex; flex-direction: column; gap: var(--space-6); background: var(--color-surface); padding: var(--space-8)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap">
+      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+        <h2 style="font-size: 22px; margin: 0; text-transform: uppercase; letter-spacing: -0.01em">Költségkalkulátor <span style="font-weight: 400; opacity: .5">/ Cost calculator</span></h2>
+        <p style="margin: 0; font-size: 14px; opacity: .75">Csak éles, valós idejű hívások. Húzd a csúszkát a napi volumenhez.</p>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: var(--space-3)">
+        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 48px; line-height: 1; color: var(--color-accent); font-variant-numeric: tabular-nums">{{ callsLabel }}</span>
+        <span style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; opacity: .6">hívás / nap</span>
+      </div>
+    </div>
+
+    <div class="field" style="display: flex; flex-direction: column; gap: var(--space-2)">
+      <label for="calls-range">Napi hívásszám / calls per day</label>
+      <input id="calls-range" type="range" min="50" max="3000" step="50" value="{{ calls }}" onInput="{{ setCalls }}" style="width: 100%; height: 6px; cursor: pointer" />
+      <div style="display: flex; justify-content: space-between; font-size: 10.5px; letter-spacing: 0.04em; opacity: .5">
+        <span>50</span><span>1 000</span><span>2 000</span><span>3 000</span>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1.3fr .5fr 2.2fr .8fr .8fr .9fr; gap: 0 var(--space-4); align-items: center; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55; border-bottom: 2px solid var(--color-divider); padding-bottom: var(--space-2)">
+      <span>Modell</span><span>1 kép</span><span></span><span style="text-align: right">/ nap</span><span style="text-align: right">/ hó</span><span style="text-align: right">/ év</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; margin-top: calc(-1 * var(--space-4))">
+      <sc-for list="{{ costRows }}" as="row" hint-placeholder-count="7">
+        <div style="display: grid; grid-template-columns: 1.3fr .5fr 2.2fr .8fr .8fr .9fr; gap: 0 var(--space-4); align-items: center; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-divider); font-size: 14px; font-variant-numeric: tabular-nums">
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-weight: 600">{{ row.name }}</span>
+            <span style="font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; opacity: .5">{{ row.note }}</span>
+          </span>
+          <span style="font-size: 12px; opacity: .7">{{ row.unit }}</span>
+          <span style="display: block; height: 10px; background: var(--color-neutral-200); overflow: hidden">
+            <span style="display: block; height: 100%; width: {{ row.pct }}%; background: {{ row.barColor }}"></span>
+          </span>
+          <span style="text-align: right">{{ row.daily }}</span>
+          <span style="text-align: right; font-weight: 700">{{ row.monthly }}</span>
+          <span style="text-align: right; opacity: .7">{{ row.yearly }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <p style="margin: 0; font-size: 11px; letter-spacing: 0.04em; opacity: .55">Hó = 30 nap, év = 365 nap · a sávok az egy képre eső árat mutatják egymáshoz képest · extra input képek költsége nélkül.</p>
+  </section>
+
+  <hr class="hr" style="width: 100%; max-width: 1280px; margin: 0" />
+
+  <section style="width: 100%; max-width: 1280px; display: flex; flex-direction: column; gap: var(--space-6)">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4)">
+      <h2 style="font-size: 22px; margin: 0; text-transform: uppercase; letter-spacing: -0.01em">Vész-opció — 3D / AR try-on <span style="font-weight: 400; opacity: .5">/ Fallback: live AR</span></h2>
+      <span style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55">300 SKU · Shopify app</span>
+    </div>
+
+    <div style="display: flex; gap: var(--space-4); align-items: flex-start; background: var(--color-surface); border-left: 2px solid var(--color-divider); padding: var(--space-4) var(--space-6)">
+      <span style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; opacity: .6; white-space: nowrap; padding-top: 2px">A három szint</span>
+      <p style="margin: 0; font-size: 13.5px; line-height: 1.6; text-wrap: pretty">A Fittingbox az eyewear-standard, és három digitalizálási szintet árul €22–250 / keret között — az ár a keret népszerűségétől és a kért minőségtől függ. <strong>Basic:</strong> 2 fotó feltöltése, AI-alapú, percek alatt. <strong>Standard:</strong> fizikai kereteket küldesz Toulouse-ba vagy Miamiba, patentelt StudioBox-szal fotózzák. <strong>Premium:</strong> StudioLab-szakértők, bespoke igazítás, luxus-renderelés. A Standard és Premium átfutása ~3 hét a keretek beérkezése után — ez a bevezetés kritikus útja, nem az ár.</p>
+    </div>
+
+    <p style="margin: 0; max-width: 78ch; font-size: 16px; line-height: 1.55; text-wrap: pretty">Ha a képgenerálós út elbukik, a másik architektúra egy kész Shopify AR-app. Itt minden termékhez 3D objektum kell — a digitalizálás egyszeri költség, utána a renderelés a felhasználó telefonján fut, tehát nincs hívásonkénti díj. A teljes év-1 összeg egyetlen ismeretlenen áll: a katalógusod hány kerete van már meg a szolgáltató adatbázisában.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6)">
+      <div class="card">
+        <div class="card-kicker">Élő / live AR</div>
+        <div class="card-body" style="text-wrap: pretty">A 3D modell letöltődik a user telefonjára, a böngésző a készülék GPU-ján rajzolja rá a kameraképre, 30–60 fps. Bemenete kötelezően a 3D obj. Marginális költség nulla, az asset drága de egyszeri.</div>
+      </div>
+      <div class="card">
+        <div class="card-kicker">Elő-renderelt / pre-render</div>
+        <div class="card-body" style="text-wrap: pretty">Minden keret × archetípus kombináció előre legyártva, jpg/mp4-ként a bucketben. A user statikus fájlt kap, azonnal. Csak az létezik, amit előre kiszámoltál.</div>
+      </div>
+      <div class="card">
+        <div class="card-kicker">On-demand — a mostani</div>
+        <div class="card-body" style="text-wrap: pretty">A számítás kattintáskor, fizetős API-n történik, a user várakozása közben. Ezt árazza a fenti kalkulátor.</div>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 34%">Opció<br /><span style="opacity: .6">Option</span></th>
+          <th style="width: 24%">Egyszeri 3D (300 SKU)<br /><span style="opacity: .6">One-off 3D</span></th>
+          <th style="width: 18%">Havi<br /><span style="opacity: .6">Monthly</span></th>
+          <th>Év 1 összesen<br /><span style="opacity: .6">Year 1 total</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: var(--color-accent-100)">
+          <td>
+            <span style="display: flex; flex-direction: column; gap: var(--space-1)">
+              <span style="font-weight: 700">Fittingbox app — katalógus a DB-ben</span>
+              <span style="font-size: 12.5px; opacity: .7">195 000+ keret, 1 200+ márka; a benne lévők digitalizálása díjmentes<sup>8</sup></span>
+            </span>
+          </td>
+          <td style="font-variant-numeric: tabular-nums; font-weight: 700; color: var(--color-accent-700)">$0</td>
+          <td style="font-variant-numeric: tabular-nums">$59–199 <span style="opacity: .65">(Bronze–Gold)</span><sup>9</sup></td>
+          <td style="font-variant-numeric: tabular-nums; font-weight: 700">$700–2 400</td>
+        </tr>
+        <tr>
+          <td>
+            <span style="display: flex; flex-direction: column; gap: var(--space-1)">
+              <span style="font-weight: 700">Fittingbox Basic — „3D from Photo”</span>
+              <span style="font-size: 12.5px; opacity: .7">2 fotót töltesz fel, AI-alapú, percek alatt<sup>8</sup></span>
+            </span>
+          </td>
+          <td>árajánlat-köteles, alacsony</td>
+          <td style="font-variant-numeric: tabular-nums">$59–199</td>
+          <td style="font-variant-numeric: tabular-nums">~$1–5 k</td>
+        </tr>
+        <tr>
+          <td>
+            <span style="display: flex; flex-direction: column; gap: var(--space-1)">
+              <span style="font-weight: 700">Fittingbox Standard — fizikai szkennelés</span>
+              <span style="font-size: 12.5px; opacity: .7">€22–250 / keret; a kereteket Toulouse-ba vagy Miamiba küldöd, patentelt StudioBox, ~3 hét a beérkezés után<sup>8</sup></span>
+            </span>
+          </td>
+          <td style="font-variant-numeric: tabular-nums">€6 600 – 75 000</td>
+          <td style="font-variant-numeric: tabular-nums">$59–199</td>
+          <td style="font-variant-numeric: tabular-nums">€8 000–77 000</td>
+        </tr>
+        <tr>
+          <td>
+            <span style="display: flex; flex-direction: column; gap: var(--space-1)">
+              <span style="font-weight: 700">Fittingbox Premium — StudioLab</span>
+              <span style="font-size: 12.5px; opacity: .7">szakértői bespoke igazítás, luxus-renderelés — a €250 / keret sáv teteje<sup>8</sup></span>
+            </span>
+          </td>
+          <td style="font-variant-numeric: tabular-nums">€75 000-től</td>
+          <td style="font-variant-numeric: tabular-nums">$59–199</td>
+          <td style="font-variant-numeric: tabular-nums">€77 000+</td>
+        </tr>
+        <tr>
+          <td>
+            <span style="display: flex; flex-direction: column; gap: var(--space-1)">
+              <span style="font-weight: 700">Camweara</span>
+              <span style="font-size: 12.5px; opacity: .7">multi-kategória, ~$100–300 / SKU egyedi digitalizálás<sup>10</sup></span>
+            </span>
+          </td>
+          <td style="font-variant-numeric: tabular-nums">$30–90 k</td>
+          <td style="font-variant-numeric: tabular-nums">$90-től<sup>11</sup></td>
+          <td style="font-variant-numeric: tabular-nums">$31–91 k</td>
+        </tr>
+        <tr>
+          <td>
+            <span style="display: flex; flex-direction: column; gap: var(--space-1)">
+              <span style="font-weight: 700">DIY AI 3D (Meshy / Tripo) + saját viewer</span>
+              <span style="font-size: 12.5px; opacity: .7">$0,13–0,50 / modell<sup>12</sup> — szemüvegre kockázatos, lásd alább</span>
+            </span>
+          </td>
+          <td style="font-variant-numeric: tabular-nums">~$40–150</td>
+          <td style="opacity: .7">fejlesztés</td>
+          <td style="font-variant-numeric: tabular-nums">~$150 + munka</td>
+        </tr>
+        <tr>
+          <td>
+            <span style="display: flex; flex-direction: column; gap: var(--space-1)">
+              <span style="font-weight: 700">Saját pipeline — elő-renderelve</span>
+              <span style="font-size: 12.5px; opacity: .7">nincs 3D, fix modell-archetípusok</span>
+            </span>
+          </td>
+          <td style="opacity: .7">—</td>
+          <td style="font-variant-numeric: tabular-nums">~$0</td>
+          <td style="font-variant-numeric: tabular-nums; font-weight: 700">~$205</td>
+        </tr>
+        <tr>
+          <td>
+            <span style="display: flex; flex-direction: column; gap: var(--space-1)">
+              <span style="font-weight: 700">Saját pipeline — on-demand, GPT high</span>
+              <span style="font-size: 12.5px; opacity: .7">300 hívás / nap, valós időben</span>
+            </span>
+          </td>
+          <td style="opacity: .7">—</td>
+          <td style="font-variant-numeric: tabular-nums">~$5 390</td>
+          <td style="font-variant-numeric: tabular-nums">~$65 000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); background: var(--color-accent-100); border-left: 2px solid var(--color-accent); padding: var(--space-4) var(--space-6)">
+        <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-700)">A nyitott kérdés / the open question</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; text-wrap: pretty">Kérj katalógus-matchinget: a 300 keretedből hány van már meg a 195k-os adatbázisban. Ez a szám a különbség <strong>$700 és €77 000</strong> között az első évben. Saját márkás vagy no-name kereteknél a matching nulla lesz — onnantól az elő-renderelt pipeline nem kompromisszum, hanem a racionális választás.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); background: var(--color-surface); padding: var(--space-4) var(--space-6)">
+        <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; opacity: .6">Nem ugyanaz a termék / different products</div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.55; text-wrap: pretty">Az AR-app bemenete a user saját arca, élőben, korlátlanul — plusz PD-mérés és méretgarancia. Az elő-renderelés ezt nem tudja kiváltani, mert az arcot nem ismertük előre. Ha az ígéret „lásd magadon”, ez nem optimalizálási, hanem architektúra-döntés. Ha „lásd, hogy néz ki mozgásban, profi felvételen”, a kettő egymás mellett is megél.</p>
+      </div>
+    </div>
+
+    <p style="margin: 0; max-width: 92ch; font-size: 11px; letter-spacing: 0.04em; line-height: 1.6; opacity: .55">A generatív 3D szemüvegen bukik el a leggyakrabban: vékony fémpánt, átlátszó lencse, pontos befoglaló méretek. A Tripo-féle megoldás nem fotogrammetria — mélységet becsül és következtetett textúrákkal épít mesht<sup>13</sup>. 2 mm hiba pont azt a bizalmat rombolja, amiért a funkció létezik.</p>
+
+    <hr class="hr" style="margin: var(--space-2) 0 0" />
+
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4)">
+      <h3 style="font-size: 18px; margin: 0; text-transform: uppercase; letter-spacing: -0.01em">A három 3D-út egymás ellen <span style="font-weight: 400; opacity: .5">/ Buy vs. build vs. Meshy</span></h3>
+      <span style="font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: .55">A: kész app · B: saját generátor · C: Meshy + tükör</span>
+    </div>
+
+    <div style="background: var(--color-accent); color: #fff; padding: var(--space-6); display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap">
+      <p style="margin: 0; font-family: var(--font-heading); font-size: 30px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; max-width: 34ch; text-wrap: pretty">Mindhárom megszünteti a generálási várakozást.</p>
+      <span style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; opacity: .8">A · B · C — élő nézet, nincs API-hívás kattintáskor</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6)">
+      <div style="display: flex; flex-direction: column; gap: var(--space-4); background: var(--color-surface); padding: var(--space-6); min-width: 0">
+        <div style="display: flex; align-items: baseline; gap: var(--space-3)">
+          <span style="font-size: 34px; font-weight: 700; line-height: 1; color: var(--color-accent)">A</span>
+          <span style="display: flex; flex-direction: column">
+            <span style="font-size: 17px; font-weight: 700">Fittingbox — kész Shopify app</span>
+            <span style="font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; opacity: .55">bevált, de drága</span>
+          </span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--space-3); font-size: 14px; line-height: 1.55">
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span><strong>Élő tükör-nézet</strong> — a user a saját arcán, mozgásban látja, nincs várakozás és nincs generálási idő.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span>Eyewear-standard, kiforrott: PD-mérés, méretgarancia, 195 k-s keret-adatbázis.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span>Nincs fejlesztés és nincs hívásonkénti költség — havi díj és kész.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="opacity: .5; font-weight: 700">−</span><span>Ha a keretek nincsenek a DB-ben: €22–250 / SKU digitalizálás és ~3 hét átfutás, azaz akár €77 000 az első évben.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="opacity: .5; font-weight: 700">−</span><span>Zárt renderelés: a kimeneti kép beállításait nem te szabod meg.</span></li>
+        </ul>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-4); background: var(--color-accent-100); border-left: 2px solid var(--color-accent); padding: var(--space-6); min-width: 0">
+        <div style="display: flex; align-items: baseline; gap: var(--space-3)">
+          <span style="font-size: 34px; font-weight: 700; line-height: 1; color: var(--color-accent)">B</span>
+          <span style="display: flex; flex-direction: column">
+            <span style="font-size: 17px; font-weight: 700">Saját 3D generátor</span>
+            <span style="font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; opacity: .55">lefejlesztjük</span>
+          </span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--space-3); font-size: 14px; line-height: 1.55">
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span>Ugyanaz az élő tükör-nézet, várakozás nélkül — a renderelés a user telefonján fut.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span><strong>A fotók szögei tűpontosan beállíthatók:</strong> ha megvan a 3D modell, bármilyen kameraállásból, fix fókusztávval és fényben rendereled a termékképeket — konzisztens katalógus, nem újrafotózás.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span>Egy asset kiszolgálja a try-ont, a termékfotót és a videót; nincs SKU-nkénti licencdíj.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span><strong>Később is használható a termékfotók véglegesítésére</strong> — 1 500 keretnél <strong>350 e Ft</strong> egyszeri költség, utána újrarenderelhető bármikor.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="opacity: .5; font-weight: 700">−</span><span>Fejlesztési és 3D-előállítási kockázat: vékony fémpánt, átlátszó lencse, ±2 mm-es méretpontosság.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="opacity: .5; font-weight: 700">−</span><span>A face-tracking és a méretgarancia is a mi felelősségünk — ez a Fittingbox tíz éves előnye.</span></li>
+        </ul>
+        <div style="display: flex; flex-direction: column; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: var(--space-4)">
+          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; opacity: .6">Szerződésünkön felüli fejlesztési ráfordítás / extra build cost</div>
+          <div style="display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-4); font-size: 14px; line-height: 1.5">
+            <span style="font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap">~200 ó</span><span>plusz fejlesztés</span>
+            <span style="font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap">4 M Ft</span><span>piaci ár, nettó</span>
+            <span style="font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; color: var(--color-accent-700)">2 M Ft</span><span>egyedi licensz nélkül</span>
+            <span style="font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap">Szept.</span><span>2 fejlesztővel, nagyon feszítve</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-4); background: var(--color-surface); padding: var(--space-6); min-width: 0">
+        <div style="display: flex; align-items: baseline; gap: var(--space-3)">
+          <span style="font-size: 34px; font-weight: 700; line-height: 1; color: var(--color-accent)">C</span>
+          <span style="display: flex; flex-direction: column">
+            <span style="font-size: 17px; font-weight: 700">Meshy + virtuális tükör</span>
+            <span style="font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; opacity: .55">kész 3D szolgáltatás</span>
+          </span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--space-3); font-size: 14px; line-height: 1.55">
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span>A 3D-t nem mi fejlesztjük: image-to-3D API-ból jön, csak a tükör-nézetet építjük.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span>A B minden hozama megvan — élő nézet, tűpontos kameraszögek, saját asset — jóval kisebb kockázattal.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="color: var(--color-accent); font-weight: 700">+</span><span><strong>1 500 keret 3D-je $900–1 350</strong> — nagyságrenddel a Fittingbox szkennelés alatt, nincs beküldés és nincs 3 hét.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="opacity: .5; font-weight: 700">−</span><span style="color: var(--color-accent-700)">A Meshy nem eyewear-specifikus: vékony pánt és átlátszó lencse itt is a szűk keresztmetszet, retry-val kell számolni.</span></li>
+          <li style="display: flex; gap: var(--space-3)"><span style="opacity: .5; font-weight: 700">−</span><span style="color: var(--color-accent-700)">A méretpontosság nem garantált — PD-mérésre és méretgaranciára így sem alkalmas.</span></li>
+        </ul>
+        <div style="display: flex; flex-direction: column; gap: var(--space-3); border-top: 2px solid var(--color-divider); padding-top: var(--space-4)">
+          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; opacity: .6">Meshy 6 · Pro $20/hó = 1 000 hitel (~$0,02/hitel)<sup>14</sup></div>
+          <table class="table" style="font-size: 13px; width: 100%; table-layout: fixed">
+            <thead>
+              <tr>
+                <th style="width: 40%">Beállítás</th>
+                <th style="text-align: right; width: 15%">Hitel</th>
+                <th style="text-align: right; white-space: nowrap">1 500 keret</th>
+                <th style="text-align: right; white-space: nowrap">1,5× retry</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="white-space: nowrap">textúrával</td>
+                <td style="text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap">30</td>
+                <td style="text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap">$900</td>
+                <td style="text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap">~$1 350</td>
+              </tr>
+              <tr>
+                <td style="white-space: nowrap">textúra nélkül</td>
+                <td style="text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap">20</td>
+                <td style="text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap">$600</td>
+                <td style="text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap">~$900</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin: 0; font-size: 11px; letter-spacing: 0.04em; line-height: 1.5; opacity: .55">A régebbi Meshy-modellek 5 / 15 hitelt kérnek — a keret geometriája viszont pont az, ahol az újabb modell számít.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <p style="margin: 0; max-width: 92ch; font-size: 14px; line-height: 1.55; text-wrap: pretty">A különbség a kontroll, a kockázat és a költség szerkezete. Ha a katalógus-matching alacsony, az A-ban a digitalizálás lesz a legdrágább tétel — onnantól a <strong>C a legjobb ár-kockázat arány</strong> (a 3D készen jön, mi csak a tükröt építjük), a B pedig akkor indokolt, ha a 3D minőségét végig kézben kell tartani.</p>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;highlightBest&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Megjelenítés&quot;},&quot;showGallery&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Megjelenítés&quot;},&quot;showSources&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Megjelenítés&quot;},&quot;defaultCalls&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:300,&quot;min&quot;:50,&quot;max&quot;:3000,&quot;step&quot;:50,&quot;unit&quot;:&quot;hívás/nap&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Kalkulátor&quot;}}">
+const MODELS = [
+  { name: "Seedream 5.0 Lite", note: "1K", cents: 3.5 },
+  { name: "Nano Banana 2 Lite", note: "~$0.04", cents: 4.0 },
+  { name: "Seedream 4.5", note: "", cents: 4.0 },
+  { name: "Seedream 5.0 Pro", note: "1.5K", cents: 4.8, best: true },
+  { name: "Seedream 5.0 Pro", note: "2K", cents: 9.3 },
+  { name: "Nano Banana 2", note: "1K", cents: 7.0 },
+  { name: "GPT Image 2", note: "", cents: 22.0 },
+];
+
+class Component extends DCLogic {
+  state = { calls: null };
+
+  costRows() {
+    const calls = this.state.calls ?? this.props.defaultCalls ?? 300;
+    const max = Math.max.apply(null, MODELS.map((m) => m.cents));
+    const money = (n) =>
+      "$" + n.toLocaleString("hu-HU", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const round = (n) => "$" + Math.round(n).toLocaleString("hu-HU");
+    return MODELS.map((m, i) => ({
+      key: m.name + i,
+      name: m.name,
+      note: m.note,
+      unit: (m.cents % 1 === 0 ? m.cents.toFixed(0) : m.cents.toFixed(1).replace(".", ",")) + "¢",
+      daily: money((calls * m.cents) / 100),
+      monthly: round((calls * m.cents * 30) / 100),
+      yearly: round((calls * m.cents * 365) / 100),
+      pct: Math.max(2, Math.round((m.cents / max) * 100)),
+      isBest: !!m.best,
+      barColor: m.best ? "var(--color-accent)" : "var(--color-neutral-500)",
+    }));
+  }
+
+  renderVals() {
+    const calls = this.state.calls ?? this.props.defaultCalls ?? 300;
+    return {
+      calls,
+      callsLabel: calls.toLocaleString("hu-HU"),
+      costRows: this.costRows(),
+      setCalls: (e) => this.setState({ calls: Number(e.target.value) }),
+      highlightBest: this.props.highlightBest ?? true,
+      showGallery: this.props.showGallery ?? true,
+      showSources: this.props.showSources ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
